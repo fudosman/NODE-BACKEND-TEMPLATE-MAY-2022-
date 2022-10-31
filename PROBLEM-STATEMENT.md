@@ -2,21 +2,16 @@
 
 ## Overview
 
-Congratulations! The year is 2022 and you have been given a job as a backend developer with the
-team at Labo DevStudio.
+## Task Description
 
-**Problem Statement:**
-The labo Bank is trying to set up a platform for their banking service to make online
-banking seamless for their user. You’re therefore given a task to setup a basic banking API service
-with the following features:
-
-*Users can:*
-
-* sign up
-* Login
-* Deposit Money
-* Create Groups
-* Join Groups
-* Withdraw Money
-* Transfer funds to other users
-* See a list of their transactions
+- Setup a server (Hosted)
+  
+- Create an **(GET)** api endoint that returns the following  json response:
+    
+     { "**slackUsername**": String, "**backend**": Boolean, "**age**": Integer, "**bio**": String }
+    
+    - SlackUsername should be a **string** datatype and your slack username
+    - Backend should be a **boolean** datatype
+    - Age should be an  **integer** datatype
+    - Bio(description about yourself) should be a **string** datatype
+- Push to **GitHub**
