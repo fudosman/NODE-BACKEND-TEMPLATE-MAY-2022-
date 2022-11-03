@@ -29,10 +29,10 @@ exports.postResource = (req, res) => {
       });
     }
     console.log(answer);
-    return res.status(StatusCodes.OK).json({
+    return res.status(StatusCodes.CREATED).json({
       slackUsername: "salt",
       result: answer,
-      operation_type
+      operation_type,
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
