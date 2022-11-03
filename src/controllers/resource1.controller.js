@@ -21,25 +21,24 @@ exports.postResource = (req, res) => {
   const { operation_type, x, y } = req.body;
   try {
     const answer = addSubMult(operation_type, x, y);
-    console.log(answer)
-   
-    if(!answer){
+    console.log(answer);
+
+    if (!answer) {
       return res.status(StatusCodes.BAD_REQUEST).json({
-        error: 'this operator will be accepted later'
-      })
+        error: "this operator will be accepted later",
+      });
     }
     console.log(answer);
     return res.status(StatusCodes.OK).json({
-      slackUsername: "@salt", 
-      operation_type, 
-      result: answer
-    })
+      slackUsername: "salt",
+      operation_type,
+      result: answer,
+    });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       status: "error",
       error_message: error.message,
     });
-
   }
 };
 
