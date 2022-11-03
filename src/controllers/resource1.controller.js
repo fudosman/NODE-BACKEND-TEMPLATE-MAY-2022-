@@ -31,8 +31,8 @@ exports.postResource = (req, res) => {
     console.log(answer);
     return res.status(StatusCodes.OK).json({
       slackUsername: "salt",
-      operation_type,
       result: answer,
+      operation_type
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
