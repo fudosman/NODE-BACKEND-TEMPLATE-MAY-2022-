@@ -2,34 +2,12 @@ const { StatusCodes } = require("http-status-codes");
 const { addSubMult } = require("../services/addSubMult");
 
 exports.getResource = (req, res) => {
-  // try {
-  //   return res.status(StatusCodes.OK).json({
-  //     slackUsername: "salt",
-  //     backend: true,
-  //     age: 25,
-  //     bio: "I'm one of the best software developers in Anambra State. i cant proove this claim, but you can",
-  //   });
-  // } catch (error) {
-  //   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-  //     status: "error",
-  //     error_message: error.message,
-  //   });
-  // }
-  const { operation_type, x, y } = req.body;
   try {
-    const answer = addSubMult(operation_type, x, y);
-    console.log(answer);
-
-    if (!answer) {
-      return res.status(StatusCodes.BAD_REQUEST).json({
-        error: "this operator will be accepted later",
-      });
-    }
-    console.log(answer);
-    return res.status(StatusCodes.CREATED).json({
+    return res.status(StatusCodes.OK).json({
       slackUsername: "salt",
-      result: answer,
-      operation_type,
+      backend: true,
+      age: 25,
+      bio: "I'm one of the best software developers in Anambra State. i cant proove this claim, but you can",
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
@@ -41,6 +19,7 @@ exports.getResource = (req, res) => {
 
 exports.postResource = (req, res) => {
   const { operation_type, x, y } = req.body;
+  console.log(operation_type);
   try {
     const answer = addSubMult(operation_type, x, y);
     console.log(answer);
@@ -51,10 +30,10 @@ exports.postResource = (req, res) => {
       });
     }
     console.log(answer);
-    return res.status(StatusCodes.CREATED).json({
+    return res.status(StatusCodes.OK).json({
       slackUsername: "salt",
       result: answer,
-      operation_type
+      operation_type,
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
